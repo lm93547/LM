@@ -1,5 +1,12 @@
 // 1. Import the extendTheme function
-import { extendTheme } from '@chakra-ui/react'
+import { extendTheme, ThemeConfig } from '@chakra-ui/react'
+
+// 2. Add your color mode config
+const config: ThemeConfig = {
+    initialColorMode: 'dark',
+    useSystemColorMode: false,
+  }
+  
 
 // 2. Extend the theme to include custom colors, fonts, etc
 const colors = {
@@ -14,4 +21,4 @@ const fonts = {
     heading: `'Dosis', sans-serif`,
 }
 
-export const theme = extendTheme({ colors, fonts })
+export const theme = extendTheme({ colors, fonts, config })
