@@ -1,4 +1,4 @@
-# [Lucas Martin - Fullstack Software Developer Personal Website](lucasmartin.me)
+# [Lucas Martin - Fullstack Software Developer Personal Website](https://www.lucasmartin.me)
 
 ![branches](/docs/badges/badge-branches.svg)
 
