@@ -26,8 +26,8 @@ const SocialButton = ({
     <chakra.button
       bg={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
       rounded={"full"}
-      w={8}
-      h={8}
+      w={4}
+      h={4}
       cursor={"pointer"}
       as={"a"}
       href={href}
@@ -62,11 +62,9 @@ export default function Footer() {
         py={2}
         direction={{ base: "column", md: "row" }}
         spacing={4}
-        justify={{ base: "center", md: "space-between" }}
+        justify={{ base: "center", md: "center" }}
         align={{ base: "center", md: "center" }}
       >
-        <Code colorScheme="red">{INITIALS}</Code>
-        <Text>{`© 2022 ${NAME}. All rights reserved`}</Text>
         <Stack direction={"row"} spacing={6}>
           {socialLinks.map((link, i) => {
             return (
