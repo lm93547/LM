@@ -17,7 +17,7 @@ import {
 
 const HomePageHero = () => {
   return (
-    <Stack maxW={"5xl"} align={"flex-start"} spacing={6}>
+    <Stack p="4" maxW={useBreakpointValue({ base: "md", md: "5xl" })} align={"flex-start"} spacing={6}>
       <Heading
         color={"white"}
         fontWeight={200}
@@ -36,8 +36,8 @@ const HomePageHero = () => {
         {BIO}
       </Heading>
       <Stack direction={"row"}>
-        <ButtonGroup isAttached>
-          <Button rounded={"full"} variant="outline" color={"white"}>
+        <ButtonGroup isAttached w="90%">
+          <Button fontSize={useBreakpointValue({ base: "sm", md: "md" })} rounded={"full"} variant="outline" color={"white"}>
             Currently working on:
           </Button>
           <Button
@@ -51,6 +51,7 @@ const HomePageHero = () => {
             onClick={() => {
               window.open(STRUCT_URL, "_blank");
             }}
+            fontSize={useBreakpointValue({ base: "sm", md: "md" })}
           >
             {STRUCT}
           </Button>
