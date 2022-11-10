@@ -1,6 +1,5 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import Footer from '../../components/Footer';
-import Navbar from '../../components/Navbar';
 import { socialLinks } from '../../constants/navLinks';
 import {ThemeWrapper} from '../testHelpers/themeWrapper';
 
