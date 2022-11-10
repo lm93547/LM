@@ -1,4 +1,4 @@
-import { ChakraProvider, ThemeProvider } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import React from "react";
 
 type Props = {
