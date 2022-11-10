@@ -1,11 +1,21 @@
 import React from "react";
-import { Menu, MenuButton, Button, Avatar, MenuList, Center, MenuDivider, MenuItem } from "@chakra-ui/react";
+import {
+  Menu,
+  MenuButton,
+  Button,
+  Avatar,
+  MenuList,
+  Center,
+  MenuDivider,
+  MenuItem,
+} from "@chakra-ui/react";
 import { navLinks } from "../../constants/navLinks";
 import { HamburgerIcon } from "@chakra-ui/icons";
+import { useRouter } from "next/router";
 
-type Props = {};
+const NavMenu = () => {
+  const router = useRouter();
 
-const NavMenu = (props: Props) => {
   return (
     <Menu>
       <MenuButton
@@ -19,8 +29,18 @@ const NavMenu = (props: Props) => {
         <HamburgerIcon />
       </MenuButton>
       <MenuList alignItems={"center"}>
-        {navLinks.map((link)=>{
-            return <MenuItem key={link.title}>{link.title}</MenuItem>
+        {navLinks.map(({title, url}) => {
+          return (
+            <MenuItem
+              onClick={() => {
+                router.push(url);
+              }}
+              key={title}
+              data-testid="nav-link"
+            >
+              {title}
+            </MenuItem>
+          );
         })}
       </MenuList>
     </Menu>
