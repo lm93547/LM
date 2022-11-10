@@ -1,5 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
-import Navbar from "../../components/Navbar";
+import { fireEvent, render } from "@testing-library/react";
 import NavMenu from "../../components/NavMenu";
 import { navLinks } from "../../constants/navLinks";
 import { ThemeWrapper } from "../testHelpers/themeWrapper";
