@@ -23,6 +23,7 @@ const customJestConfig = {
     collectCoverage: false,
     collectCoverageFrom: [
         "<rootDir>/src/**/*.{ts,tsx}",
+        "<rootDir/pages/**/*.{ts,tsx}"
     ],
     coveragePathIgnorePatterns: [
         "<rootDir>/src/__tests__/testHelpers/*",
