@@ -80,9 +80,9 @@ export default function Navbar() {
                 spacing={4}
                 display={{ base: "none", md: "flex" }}
               >
-                {navLinks.map((link) => (
-                  <NavLink router={router} href={link.url} key={link.title}>
-                    {link.title}
+                {navLinks.map(({url, title}, i) => (
+                  <NavLink router={router} href={url} key={title}>
+                    {title}
                   </NavLink>
                 ))}
               </HStack>
