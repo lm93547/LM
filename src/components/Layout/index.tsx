@@ -20,17 +20,18 @@ const variants = {
 };
 
 const Layout = ({ children }: Props) => {
-  const [vh, setVh] = useState(window.innerHeight);
+  const [vh, setVh] = useState(window?.innerHeight);
 
   useEffect(() => {
     const updateVh = () => {
-      setVh(window.innerHeight);
+      setVh(window?.innerHeight);
     };
 
-    window.addEventListener("resize", updateVh);
+    window?.addEventListener("resize", updateVh);
 
-    return () => window.removeEventListener("resize", updateVh);
+    return () => window?.removeEventListener("resize", updateVh);
   }, []);
+  
   return (
     <motion.div
       animate="in"
