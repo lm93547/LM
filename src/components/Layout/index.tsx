@@ -2,33 +2,37 @@ import { Flex } from "@chakra-ui/react";
 import React from "react";
 import Footer from "../Footer";
 import Navbar from "../Navbar";
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
 
 type Props = {
   children: any;
 };
 
 const variants = {
-  hidden: { opacity: 0, y: 0, scale: 0.9 },
-  enter: { opacity: 1, x: 0, y: 0, scale: 1 },
-  exit: { opacity: 0, x: 0, scale: 0.9 },
+  in: {
+    opacity: 1,
+    scale: 1
+  },
+  out: {
+    opacity: 0,
+    scale: 0.9
+  },
 };
 
 const Layout = ({ children }: Props) => {
   return (
-    <motion.main
-      initial="hidden"
-      animate="enter"
-      exit="exit"
+    <motion.div
+      animate="in"
+      exit="out"
+      initial="out"
       variants={variants}
-      transition={{ type: "linear" }}
+      transition={{ type: "tween" }}
+      layout="position"
     >
       <Flex
         w={"full"}
-        // h={"100vh"}
-        position="fixed"
-        top="0"
-        bottom="0"
+        h={"100vh"}
+        minH="-webkit-fill-available"
         backgroundImage={"/assets/backgrounds/mcr-black.png"}
         backgroundSize={"cover"}
         backgroundPosition={"center center"}
@@ -44,7 +48,7 @@ const Layout = ({ children }: Props) => {
           <Footer />
         </Flex>
       </Flex>
-    </motion.main>
+    </motion.div>
   );
 };
 
