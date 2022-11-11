@@ -25,14 +25,17 @@ const Layout = ({ children }: Props) => {
     >
       <Flex
         w={"full"}
-        h={"100vh"}
+        // h={"100vh"}
+        position="fixed"
+        top="0"
+        bottom="0"
         backgroundImage={"/assets/backgrounds/mcr-black.png"}
         backgroundSize={"cover"}
         backgroundPosition={"center center"}
       >
         <Flex
           w={"full"}
-          h={"100vh"}
+          h={"full"}
           bgGradient={"linear(to-r, blackAlpha.600, transparent)"}
           direction="column"
         >
