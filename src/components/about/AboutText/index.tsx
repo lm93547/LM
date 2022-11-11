@@ -10,7 +10,7 @@ function AboutText() {
   return (
     <Flex direction="column" p={useBreakpointValue({ base: "4", md: "6" })}>
       <IconHeader icon={<GoGist />} text={ABOUT_TITLE} />
-      <Flex fontSize={useBreakpointValue({ base: "md", md: "lg" })}>
+      <Flex fontSize={useBreakpointValue({ base: "sm", md: "md" })}>
         {ABOUT}
       </Flex>
       <IconListGrid

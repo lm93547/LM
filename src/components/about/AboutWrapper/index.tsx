@@ -18,12 +18,12 @@ const AboutWrapper = ({children, avatar, aboutHeader}: Props) => {
         m={useBreakpointValue({ base: "6", md: "2" })}
       >
         <Image
-          h={"160px"}
+          h={"150px"}
           w={"full"}
           src={aboutHeader}
           objectFit={"cover"}
           alt="about-header"
-          roundedTop="2xl"
+          roundedTop="xl"
         />
         <Flex justify={"center"} mt={-14}>
           <Avatar
