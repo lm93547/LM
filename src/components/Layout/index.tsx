@@ -1,5 +1,5 @@
 import { Flex } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "../Footer";
 import Navbar from "../Navbar";
 import { motion } from "framer-motion";
@@ -11,15 +11,26 @@ type Props = {
 const variants = {
   in: {
     opacity: 1,
-    scale: 1
+    scale: 1,
   },
   out: {
     opacity: 0,
-    scale: 0.9
+    scale: 0.9,
   },
 };
 
 const Layout = ({ children }: Props) => {
+  const [vh, setVh] = useState(window.innerHeight);
+
+  useEffect(() => {
+    const updateVh = () => {
+      setVh(window.innerHeight);
+    };
+
+    window.addEventListener("resize", updateVh);
+
+    return () => window.removeEventListener("resize", updateVh);
+  }, []);
   return (
     <motion.div
       animate="in"
@@ -31,7 +42,7 @@ const Layout = ({ children }: Props) => {
     >
       <Flex
         w={"full"}
-        h={"100vh"}
+        h={vh}
         minH="-webkit-fill-available"
         maxH={"100%"}
         backgroundImage={"/assets/backgrounds/mcr-black.png"}
