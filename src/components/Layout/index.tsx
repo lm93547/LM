@@ -48,7 +48,7 @@ const Layout = ({ children }: Props) => {
         w={"full"}
         h={vh ? vh : "100vh"}
         minH="-webkit-fill-available"
-        maxH={"100%"}
+        maxH={"100vh"}
         backgroundImage={"/assets/backgrounds/mcr-black.png"}
         backgroundSize={"cover"}
         backgroundPosition={"center center"}
