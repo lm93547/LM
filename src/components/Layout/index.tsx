@@ -20,18 +20,21 @@ const variants = {
 };
 
 const Layout = ({ children }: Props) => {
-  const [vh, setVh] = useState(window?.innerHeight);
+  const innerHeight = typeof window !== "undefined" && window.innerWidth;
+  const [vh, setVh] = useState(innerHeight);
 
   useEffect(() => {
     const updateVh = () => {
-      setVh(window?.innerHeight);
+      if (typeof window !== "undefined") {
+        setVh(window?.innerHeight);
+      }
     };
 
-    window?.addEventListener("resize", updateVh);
+    typeof window !== "undefined" && window?.addEventListener("resize", updateVh);
 
     return () => window?.removeEventListener("resize", updateVh);
   }, []);
-  
+
   return (
     <motion.div
       animate="in"
@@ -43,7 +46,7 @@ const Layout = ({ children }: Props) => {
     >
       <Flex
         w={"full"}
-        h={vh}
+        h={vh ? vh : "100vh"}
         minH="-webkit-fill-available"
         maxH={"100%"}
         backgroundImage={"/assets/backgrounds/mcr-black.png"}
